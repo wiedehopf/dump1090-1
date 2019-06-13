@@ -1,4 +1,10 @@
 Built on Raspberry Pi 2 Model B ARMv7 / Raspbian Stretch
+
+sudo apt install librtlsdr0
 dump1090-mutability_1.15_dev_armhf.deb
+
+sudo apt install libsoapysdr0.5-2 soapysdr-module-rtlsdr
 dump978-fa_3.7.1_armhf.deb
+
+
 skyview978_3.7.1_armhf.deb
