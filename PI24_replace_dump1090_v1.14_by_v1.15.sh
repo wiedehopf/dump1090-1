@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#fix "readonly file system" in PI24 image.
-mount -o remount,rw /
+#Fix PI24 image's "readonly file system".
+sudo mount -o remount,rw /
 
-sed -i 's/.*1.14/#&/' /usr/lib/fr24/install_dump1090.sh
+sudo sed -i 's/.*1.14/#&/' /usr/lib/fr24/install_dump1090.sh
 
-sed -i '/wget -O \/tmp\/dump1090-mutability_1.14_armhf.deb/i\    wget -O \/tmp\/dump1090-mutability_1.15_dev_armhf.deb https:\/\/github.com\/abcd567a\/dump1090\/releases\/download\/v1\/dump1090-mutability_1.15_dev_armhf.deb\n    dpkg -i \/tmp/dump1090-mutability_1.15_dev_armhf.deb\n    rm -f /tmp/dump1090-mutability_1.15_dev_armhf.deb\n' /usr/lib/fr24/install_dump1090.sh
+sudo sed -i '/wget -O \/tmp\/dump1090-mutability_1.14_armhf.deb/i\    wget -O \/tmp\/dump1090-mutability_1.15_dev_armhf.deb https:\/\/github.com\/abcd567a\/dump1090\/releases\/download\/v1\/dump1090-mutability_1.15_dev_armhf.deb\n    dpkg -i \/tmp/dump1090-mutability_1.15_dev_armhf.deb\n    rm -f /tmp/dump1090-mutability_1.15_dev_armhf.deb\n' /usr/lib/fr24/install_dump1090.sh
 
 sudo dpkg --purge dump1090-mutability
 
